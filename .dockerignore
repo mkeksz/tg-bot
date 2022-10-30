@@ -1,0 +1,10 @@
+/.idea
+/.git
+/.gitignore
+/.dockerignore
+/.eslintrc.json
+/Dockerfile
+/node_modules
+/README.md
+/config/local*
+/logs
