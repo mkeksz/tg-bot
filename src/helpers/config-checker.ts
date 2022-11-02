@@ -1,8 +1,9 @@
 import config from '@config'
 import Logger from 'services/logger'
+import languages from 'constants/languages'
 
 const logger = new Logger(module)
-const {env, telegram, database} = config
+const {env, telegram, database, defaultLanguage} = config
 
 if (!database.uri) throw new Error('database.uri value must be set')
 if (!env.isProd && !env.isDev && !env.isTest) {
@@ -24,5 +25,8 @@ if (!telegram.webhook.secretToken && env.isProd && telegram.webhook.domain) {
 }
 if (![443, 80, 88, 8443].includes(telegram.webhook.port)) {
   throw new Error('telegram.webhook.port value must be 443, 80, 88 or 8443')
+}
+if (!Object.values(languages).includes(defaultLanguage)) {
+  throw new Error('defaultLanguage value is incorrect')
 }
 logger.info('The config is valid')

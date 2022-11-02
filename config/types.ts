@@ -22,7 +22,8 @@ export interface ConfigParam {
   },
   database: {
     uri: string,
-  }
+  },
+  defaultLanguage: string,
 }
 
 export interface BaseConfig {

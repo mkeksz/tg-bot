@@ -28,5 +28,6 @@ export default {
     database: {
       uri: process.env['DATABASE_URI'],
     },
+    defaultLanguage: 'en',
   },
 } as BaseConfig

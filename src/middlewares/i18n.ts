@@ -1,11 +1,11 @@
 import {I18n} from '@grammyjs/i18n'
-import languages from 'constants/languages'
 import Logger from 'services/logger'
+import config from '@config'
 
 const logger = new Logger(module)
 
 export default () => new I18n({
-  defaultLocale: languages.EN,
+  defaultLocale: config.defaultLanguage,
   directory: 'src/locales',
   useSession: true,
   fluentOptions: {
