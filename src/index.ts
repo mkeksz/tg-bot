@@ -1,10 +1,10 @@
 import 'helpers/config-checker'
-import Logger from 'services/logger'
+import Logger from './services/logger'
 import config from '@config'
-import bot from 'bot'
-import {startServer} from 'server'
-import {main} from 'services/database'
-import commands from 'constants/commands-menu'
+import bot from './bot'
+import {startServer} from './server'
+import {main} from './services/database'
+import commands from './constants/commands-menu'
 
 const logger = new Logger(module)
 

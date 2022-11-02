@@ -1,7 +1,7 @@
 import {ISession, MongoDBAdapter} from '@grammyjs/storage-mongodb'
 import {lazySession} from 'grammy'
-import {BotContext, SessionData} from 'types'
-import {main} from 'services/database'
+import {BotContext, SessionData} from '../types'
+import {main} from '../services/database'
 
 const SESSION_COLLECTION_NAME = '_sessions'
 const collection = main.database.connection.collection<ISession>(SESSION_COLLECTION_NAME)

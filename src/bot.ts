@@ -1,15 +1,15 @@
 import {hydrateReply, parseMode} from '@grammyjs/parse-mode'
 import {conversations} from '@grammyjs/conversations'
 import {Bot} from 'grammy'
-import * as COMMANDS from 'constants/commands'
-import errorHandler from 'middlewares/errorHandler'
-import mongoSession from 'middlewares/mongoSession'
-import i18n from 'middlewares/i18n'
-import language from 'controllers/commands/language'
-import start from 'controllers/commands/start'
-import {BotContext} from 'types'
+import * as COMMANDS from './constants/commands'
+import errorHandler from './middlewares/errorHandler'
+import mongoSession from './middlewares/mongoSession'
+import i18n from './middlewares/i18n'
+import language from './controllers/commands/language'
+import start from './controllers/commands/start'
+import {BotContext} from './types'
 import config from '@config'
-import mainMenu from 'menus/main'
+import mainMenu from './inline-menus/main'
 
 const bot = new Bot<BotContext>(config.telegram.botToken)
 

@@ -1,4 +1,4 @@
-import * as COMMANDS from 'constants/commands'
+import * as COMMANDS from './commands'
 
 interface BotCommand {
   command: string,

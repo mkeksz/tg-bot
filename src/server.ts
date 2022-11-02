@@ -1,9 +1,9 @@
 import express, {Request, Response, NextFunction} from 'express'
 import {webhookCallback} from 'grammy'
 import * as http from 'http'
-import Logger from 'services/logger'
+import Logger from './services/logger'
 import config from '@config'
-import bot from 'bot'
+import bot from './bot'
 
 const webhook = config.telegram.webhook
 const logger = new Logger(module)

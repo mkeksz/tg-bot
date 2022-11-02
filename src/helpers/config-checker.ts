@@ -1,6 +1,6 @@
 import config from '@config'
-import Logger from 'services/logger'
-import languages from 'constants/languages'
+import Logger from '../services/logger'
+import languages from '../constants/languages'
 
 const logger = new Logger(module)
 const {env, telegram, database, defaultLanguage} = config

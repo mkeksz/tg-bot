@@ -1,6 +1,6 @@
 import {Schema, Document} from 'mongoose'
-import languages from 'constants/languages'
-import {ValueOf} from 'types'
+import languages from 'src/constants/languages'
+import {ValueOf} from 'src/types'
 import config from '@config'
 
 export interface User extends Document {

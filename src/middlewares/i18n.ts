@@ -1,5 +1,5 @@
 import {I18n} from '@grammyjs/i18n'
-import Logger from 'services/logger'
+import Logger from '../services/logger'
 import config from '@config'
 
 const logger = new Logger(module)

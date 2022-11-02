@@ -1,5 +1,5 @@
 import {ErrorHandler, GrammyError, HttpError} from 'grammy'
-import Logger from 'services/logger'
+import Logger from '../services/logger'
 
 const logger = new Logger(module)
 

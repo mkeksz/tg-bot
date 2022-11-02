@@ -1,5 +1,5 @@
 import {CommandMiddleware} from 'grammy'
-import {BotContext} from 'types'
+import {BotContext} from 'src/types'
 
 const middleware: CommandMiddleware<BotContext> = async ctx => {
   const currentLanguage = await ctx.i18n.getLocale()

@@ -1,6 +1,6 @@
 import {CommandMiddleware} from 'grammy'
-import {BotContext} from 'types'
-import mainMenu from 'menus/main'
+import {BotContext} from 'src/types'
+import mainMenu from 'src/inline-menus/main'
 
 const middleware: CommandMiddleware<BotContext> = async ctx => {
   await ctx.reply(ctx.t('start'), {

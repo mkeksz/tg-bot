@@ -1,5 +1,5 @@
-import languages from 'constants/languages'
-import {ValueOf} from 'types'
+import languages from 'src/constants/languages'
+import {ValueOf} from 'src/types'
 import {Models, getConnection} from '../index'
 
 export function create(telegramID: string, language?: ValueOf<typeof languages>) {

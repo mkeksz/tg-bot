@@ -8,7 +8,8 @@
     "baseUrl": ".",
     "paths": {
       "@config": ["config/index.ts"],
-      "*": ["src/*"],
+      "src/*": ["src/*"],
+      "config": ["node_modules/config"],
     },
     "declaration": false,
     "emitDeclarationOnly": false,

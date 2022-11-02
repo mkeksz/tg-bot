@@ -1,5 +1,5 @@
 import {Model} from 'mongoose'
-import {main} from 'services/database'
+import {main} from '../index'
 import UserSchema, {User} from './schemas/User'
 
 export const getConnection = () => {
