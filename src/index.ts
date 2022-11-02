@@ -8,13 +8,14 @@ import commands from 'constants/commands-menu'
 
 const logger = new Logger(module)
 
-const afterConnection = () => {
-  if (config.telegram.webhook.domain) return startServer()
-  const onStart = () => logger.info('The bot is running with long polling')
-  bot.start({onStart}).catch(onUncaughtException)
-  bot.api.setMyCommands(commands).catch(onUncaughtException)
-}
-main.database.waitConnection().then(afterConnection).catch(onUncaughtException)
+main.database.waitConnection()
+  .then(() => {
+    if (config.telegram.webhook.domain) return startServer()
+    bot.start({onStart: () => logger.info('The bot is running with long polling')})
+      .catch(onUncaughtException)
+    bot.api.setMyCommands(commands).catch(onUncaughtException)
+  })
+  .catch(onUncaughtException)
 process.on('uncaughtException', onUncaughtException)
 
 const signals = ['SIGINT', 'SIGTERM', 'SIGQUIT']
