@@ -9,7 +9,7 @@ import language from './controllers/commands/language'
 import start from './controllers/commands/start'
 import {BotContext} from './types'
 import config from '@config'
-import mainMenu from './inline-menus/main'
+import mainMenu from './inline-keyboards/main'
 
 const bot = new Bot<BotContext>(config.telegram.botToken)
 
