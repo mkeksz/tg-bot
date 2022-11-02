@@ -10,7 +10,7 @@ export interface User extends Document {
 
 export default new Schema<User>(
   {
-    telegramID: {type: String, required: true},
+    telegramID: {type: String, required: true, unique: true},
     language: {
       type: String,
       enum: Object.values(languages),
