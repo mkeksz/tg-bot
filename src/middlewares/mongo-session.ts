@@ -1,10 +1,10 @@
 import {ISession, MongoDBAdapter} from '@grammyjs/storage-mongodb'
 import {lazySession} from 'grammy'
 import {BotContext, SessionData} from '../types'
-import {main} from '../services/database'
+import {mainDB} from '../services/database'
 
 const SESSION_COLLECTION_NAME = '_sessions'
-const collection = main.database.connection.collection<ISession>(SESSION_COLLECTION_NAME)
+const collection = mainDB.connection.get().collection<ISession>(SESSION_COLLECTION_NAME)
 
 // Если нужно добавить новые сессионные свойства в production,
 // то также нужно не забыть добавить миграцию новых свойств

@@ -5,8 +5,8 @@ import Logger from './services/logger'
 import config from '@config'
 import bot from './bot'
 
-const webhook = config.telegram.webhook
 const logger = new Logger(module)
+const webhook = config.telegram.webhook
 
 const app = express()
 app.disable('x-powered-by')

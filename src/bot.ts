@@ -10,8 +10,12 @@ import start from './controllers/commands/start'
 import {BotContext} from './types'
 import config from '@config'
 import mainMenu from './inline-keyboards/main'
+import onlyPrivate from './middlewares/only-private'
+import authUser from './middlewares/auth-user'
 
 const bot = new Bot<BotContext>(config.telegram.botToken)
+
+bot.use(onlyPrivate)
 
 bot.use(mongoSession)
 bot.use(i18n())
@@ -19,6 +23,8 @@ bot.use(hydrateReply)
 bot.api.config.use(parseMode('HTML'))
 // https://grammy.dev/plugins/conversations.html#installing-and-entering-a-conversation
 bot.use(conversations())
+
+bot.use(authUser)
 
 //https://grammy.dev/plugins/menu.html
 bot.use(mainMenu)

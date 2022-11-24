@@ -3,12 +3,14 @@ import languages from 'src/constants/languages'
 import {ValueOf} from 'src/types'
 import config from '@config'
 
-export interface User extends Document {
+export interface User {
   telegramID: string,
   language: ValueOf<typeof languages>,
 }
 
-export default new Schema<User>(
+export type UserDocument = Document & User
+
+export default new Schema<UserDocument>(
   {
     telegramID: {type: String, required: true, unique: true},
     language: {

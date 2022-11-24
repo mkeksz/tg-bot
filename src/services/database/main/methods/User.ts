@@ -1,8 +1,16 @@
-import languages from 'src/constants/languages'
-import {ValueOf} from 'src/types'
+import {Types} from 'mongoose'
 import {getConnection} from '../index'
 
-export function create(telegramID: string, language?: ValueOf<typeof languages>) {
+export async function findOrCreate(telegramID: string | number, language?: string) {
   const {User} = getConnection().models
-  return User.create({telegramID, language})
+  return User.findOneAndUpdate(
+    {telegramID},
+    {telegramID, language},
+    {upsert: true, new: true},
+  )
+}
+
+export async function findByID(id: Types.ObjectId) {
+  const {User} = getConnection().models
+  return User.findById(id).lean()
 }

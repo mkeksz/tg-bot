@@ -1,13 +1,13 @@
 import {Connection, Model} from 'mongoose'
-import {main} from 'src/services/database'
-import UserSchema, {User} from './schemas/User'
+import {mainDB} from 'src/services/database'
+import UserSchema, {UserDocument} from './schemas/User'
 
 export type Models = Readonly<{
-  User: Model<User>,
+  User: Model<UserDocument>,
 }>
 
 export const getConnection = () => {
-  const connection = main.database.connection
+  const connection = mainDB.connection.get()
   connection.model('User', UserSchema, 'users')
   return connection as Connection & {models: Models}
 }

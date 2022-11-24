@@ -3,10 +3,10 @@ import Logger from '../logger'
 
 const logger = new Logger(module)
 
-export default class Database {
+export default class Connection {
   private readonly uri: string
   private readonly name: string
-  public readonly connection: mongoose.Connection
+  private readonly connection: mongoose.Connection
 
   public constructor(uri: string, name: string) {
     this.uri = uri
@@ -16,7 +16,11 @@ export default class Database {
     this.setEventHandlersToConnection()
   }
 
-  public async waitConnection() {
+  public get() {
+    return this.connection
+  }
+
+  public async wait() {
     logger.info(`Waiting for connection to ${this.name}...`)
     await this.connection.asPromise()
   }

@@ -1,14 +1,14 @@
-import 'helpers/config-checker'
+import './helpers/config-checker'
 import Logger from './services/logger'
 import config from '@config'
 import bot from './bot'
 import {startServer} from './server'
-import {main} from './services/database'
+import {mainDB} from './services/database'
 import commands from './constants/commands-menu'
 
 const logger = new Logger(module)
 
-main.database.waitConnection()
+mainDB.connection.wait()
   .then(() => {
     if (config.telegram.webhook.domain) return startServer()
     bot.start({onStart: () => logger.info('The bot is running with long polling')})
@@ -16,6 +16,7 @@ main.database.waitConnection()
     bot.api.setMyCommands(commands).catch(onUncaughtException)
   })
   .catch(onUncaughtException)
+
 process.on('uncaughtException', onUncaughtException)
 
 const signals = ['SIGINT', 'SIGTERM', 'SIGQUIT']
@@ -36,6 +37,6 @@ async function onUncaughtException(error: Error) {
 
 async function stop() {
   await bot.stop()
-  await main.database.disconnect()
+  await mainDB.connection.disconnect()
   logger.info('The bot was stopped')
 }
