@@ -1,6 +1,6 @@
 import {Middleware} from 'grammy'
 import {mainDB} from 'src/services/database'
-import {BotContext} from '../types'
+import {BotContext} from 'src/types'
 
 const middleware: Middleware<BotContext> = async (ctx, next) => {
   if (!ctx.from?.id) throw new Error('Failed to get from.id')

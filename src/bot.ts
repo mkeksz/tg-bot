@@ -15,12 +15,13 @@ import authUser from './middlewares/auth-user'
 
 const bot = new Bot<BotContext>(config.telegram.botToken)
 
+bot.api.config.use(parseMode('HTML'))
+
 bot.use(onlyPrivate)
 
 bot.use(mongoSession)
 bot.use(i18n())
 bot.use(hydrateReply)
-bot.api.config.use(parseMode('HTML'))
 // https://grammy.dev/plugins/conversations.html#installing-and-entering-a-conversation
 bot.use(conversations())
 
@@ -31,6 +32,7 @@ bot.use(mainMenu)
 
 bot.command(COMMANDS.START, start)
 bot.command(COMMANDS.LANGUAGE, language)
+bot.hears('hello', ctx => ctx.reply('hi'))
 
 bot.catch(errorHandler)
 

@@ -35,7 +35,12 @@
       "config"
     ],
     "preset": "ts-jest",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@config$": "<rootDir>/config/index.ts",
+      "^src/(.*)$": "<rootDir>/src/$1",
+      "^config$": "<rootDir>/node_modules/config"
+    }
   },
   "devDependencies": {
     "@types/config": "^3.3.0",

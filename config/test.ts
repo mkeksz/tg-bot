@@ -5,5 +5,8 @@ export default {
     database: {
       uri: 'mongodb://localhost:27017/test',
     },
+    telegram: {
+      botToken: 'test',
+    },
   },
 } as BaseConfig
