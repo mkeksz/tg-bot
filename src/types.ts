@@ -8,10 +8,10 @@ export interface SessionData {
   __language_code?: string
 }
 
-export type BotContext = ParseModeFlavor<Context & LazySessionFlavor<SessionData> & I18nFlavor
-  & ConversationFlavor> & {user: UserDocument}
+export type BotContext = ParseModeFlavor<
+  Context & LazySessionFlavor<SessionData> & I18nFlavor & ConversationFlavor
+> & {user: UserDocument}
 
 export type BotConversation = Conversation<BotContext>
 
 export type ValueOf<T> = T[keyof T]
-

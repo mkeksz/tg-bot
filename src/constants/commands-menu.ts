@@ -1,7 +1,7 @@
 import * as COMMANDS from './commands'
 
 interface BotCommand {
-  command: string,
+  command: string
   description: string
 }
 

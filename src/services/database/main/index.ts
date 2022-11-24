@@ -3,7 +3,7 @@ import {mainDB} from 'src/services/database'
 import UserSchema, {UserDocument} from './schemas/User'
 
 export type Models = Readonly<{
-  User: Model<UserDocument>,
+  User: Model<UserDocument>
 }>
 
 export const getConnection = () => {

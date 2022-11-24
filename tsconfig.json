@@ -9,7 +9,7 @@
     "paths": {
       "@config": ["config/index.ts"],
       "src/*": ["src/*"],
-      "config": ["node_modules/config"],
+      "config": ["node_modules/config"]
     },
     "declaration": false,
     "emitDeclarationOnly": false,
@@ -39,9 +39,9 @@
     "noUnusedParameters": false,
     "allowUnreachableCode": true,
     "allowUnusedLabels": true,
-    "exactOptionalPropertyTypes": false,
+    "exactOptionalPropertyTypes": false
   },
   "ts-node": {
-    "require": ["tsconfig-paths/register"],
+    "require": ["tsconfig-paths/register"]
   }
 }

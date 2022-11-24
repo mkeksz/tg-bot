@@ -8,16 +8,15 @@
   "extends": [
     "eslint:recommended",
     "plugin:security/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 13,
     "project": ["tsconfig.json"]
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "rules": {
     "no-empty": ["warn", {"allowEmptyCatch": true}],
     "quotes": ["warn", "single"],
@@ -28,7 +27,6 @@
     "no-param-reassign": "error",
     "no-unused-vars": "warn",
     "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": ["warn", "always-multiline"],
     "block-spacing": ["warn", "never"],
     "space-before-blocks": ["warn", "always"],
     "brace-style": ["warn", "1tbs"],
@@ -41,7 +39,6 @@
     "comma-spacing": "warn",
     "max-len": ["warn", {"code": 100}],
     "arrow-body-style": ["warn", "as-needed"],
-    "arrow-parens": ["warn", "as-needed"],
     "arrow-spacing": ["warn", {"before": true, "after": true}],
     "prefer-template": "warn",
     "template-curly-spacing": ["warn", "never"],

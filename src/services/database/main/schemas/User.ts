@@ -4,8 +4,8 @@ import {ValueOf} from 'src/types'
 import config from '@config'
 
 export interface User {
-  telegramID: string,
-  language: ValueOf<typeof languages>,
+  telegramID: string
+  language: ValueOf<typeof languages>
 }
 
 export type UserDocument = Document & User
@@ -20,5 +20,5 @@ export default new Schema<UserDocument>(
       required: true,
     },
   },
-  {timestamps: true},
+  {timestamps: true}
 )
